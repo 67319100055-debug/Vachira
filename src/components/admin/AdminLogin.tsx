@@ -10,8 +10,8 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({
   onLoginSuccess,
   onBackToPublic,
 }) => {
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('vachira123');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -28,7 +28,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({
       ) {
         onLoginSuccess(username);
       } else {
-        setErrorMsg('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง (ทดสอบด้วย admin / vachira123)');
+        setErrorMsg('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
         setIsLoading(false);
       }
     }, 400);
@@ -140,9 +140,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({
           <div className="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-500 bg-slate-50 p-3 rounded-xl">
             <div className="flex items-center justify-center gap-1.5 text-emerald-700 font-semibold mb-1">
               <CheckCircle2 className="w-3.5 h-3.5" />
-              <span>บัญชีทดสอบระบบ (Demo Account):</span>
             </div>
-            <div>ชื่อผู้ใช้: <strong className="text-slate-700">admin</strong> / รหัสผ่าน: <strong className="text-slate-700">vachira123</strong></div>
           </div>
         </div>
       </div>
